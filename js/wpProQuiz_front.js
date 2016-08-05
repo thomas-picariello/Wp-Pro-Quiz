@@ -240,7 +240,7 @@ wpProQuizReady(function () {
 
                 $e.bind('questionSolved', function (e) {
                     itemsStatus[e.values.index].solved = e.values.solved;
-                    setColor(e.values.index);
+                    setClass(e.values.index);
                 });
 
                 $e.bind('changeQuestion', function (e) {
@@ -253,7 +253,7 @@ wpProQuizReady(function () {
 
                 $e.bind('reviewQuestion', function (e) {
                     itemsStatus[e.values.index].review = !itemsStatus[e.values.index].review;
-                    setColor(e.values.index);
+                    setClass(e.values.index);
                 });
 
                 $contain.bind('mousewheel DOMMouseScroll', function (e) {
@@ -363,17 +363,17 @@ wpProQuizReady(function () {
                 }
             }
 
-            function setColor(index) {
-                var color = '';
+            function setClass(index) {
+                var className = '';
                 var itemStatus = itemsStatus[index];
 
                 if (itemStatus.review) {
-                    color = '#FFB800';
+                    className = 'wpProQuiz_reviewQuestionReview';
                 } else if (itemStatus.solved) {
-                    color = '#6CA54C';
+                    className = 'wpProQuiz_reviewQuestionSolved';
                 }
 
-                $items.eq(index).css('background-color', color);
+                $items.eq(index).addClass(className);
             }
 
             function moveScroll(e) {

@@ -464,6 +464,14 @@
     cursor: move;
 }
 
+.wpProQuiz_reviewQuestionReview{
+    background-color: #f80 !important;
+}
+
+.wpProQuiz_reviewQuestionSolved{
+    background-color: #0f0 !important;
+}
+
 .wpProQuiz_reviewLegend {
     padding: 5px !important;
     margin-bottom: 8px !important;
